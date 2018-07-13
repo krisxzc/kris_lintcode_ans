@@ -1,2 +1,2 @@
-# lintcode_ans
-lintcode solution
+# kris_lintcode_ans
+kris lintcode solution
