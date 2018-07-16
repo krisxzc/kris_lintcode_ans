@@ -9,7 +9,7 @@
 挑战：要求时间复杂度为O(n^2) 或者 O(nlogn)
 """
 
-##### 动态规划 
+##### 动态规划 ########
 # 腾讯暑期实习一面题，没答上来被刷了
 
 class Solution:
@@ -19,3 +19,10 @@ class Solution:
     """
     def longestIncreasingSubsequence(self, nums):
         # write your code here
+        length = len(nums)
+        dp = [1] * length
+        for i in range(length):
+            for j in range(i):
+                if nums[i] > nums[j]:
+                    dp[i] = max(dp[i], dp[j] + 1)
+        return max(dp)
