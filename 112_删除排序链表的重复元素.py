@@ -20,3 +20,12 @@ class Solution:
     """
     def deleteDuplicates(self, head):
         # write your code here
+        if head is None:
+            return head
+        p = head
+        while p.next is not None:
+            if p.val == p.next.val:  # 比较的时候用val属性比较
+                p.next = p.next.next
+            else:
+                p = p.next
+        return head
