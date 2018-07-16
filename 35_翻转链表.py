@@ -26,6 +26,7 @@ class Solution:
         while head is not None:
             temp = head.next
             head.next = cur
+            # 下一次迭代 把cur和head往前推一位
             cur = head
             head = temp
         return cur
