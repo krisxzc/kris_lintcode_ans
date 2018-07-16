@@ -8,6 +8,8 @@ problem description
 挑战：如果数组中的整数个数超过了2^32，你的算法是否会出错？
 '''
 
+# 难点在于第一次出现
+
 class Solution:
     """
     @param nums: The integer array.
@@ -16,5 +18,18 @@ class Solution:
     """
     def binarySearch(self, nums, target):
         # write your code here
-            
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            mid = (left + right) // 2
+            if nums[mid] < target :
+                left = mid + 1
+            # target小于或等于nums[mid]，都把范围缩小到[left,mid-1]
+            # 因为target = nums[mid]时，可能不是第一次出现target
+            else:
+                right = mid - 1
+        if nums[left] == target :
+            return left
+        elif nums[right] == target :
+            return right
+        return -1    
 
