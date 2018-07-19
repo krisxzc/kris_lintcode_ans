@@ -28,3 +28,6 @@ class Solution:
                 if dp[j] and s[j:i] in dict:
                     dp[i] = True
         return dp[-1]
+
+    
+    # 在leetcode可以AC，lintcode不行
