@@ -23,7 +23,7 @@ class Solution:
         
         #if head is None:
         #    return head
-        
+        # 这个写法包含了head是null的情况
         dummy = ListNode(-1, next=head)
         p = dummy
         while p.next is not None:
