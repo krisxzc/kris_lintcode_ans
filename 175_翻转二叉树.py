@@ -25,22 +25,23 @@ class Solution:
     @param root: a TreeNode, the root of the binary tree
     @return: nothing
     """
-    '''
+    
     # 递归方法
     def invertBinaryTree(self, root):
-        # write your code here
-        self.dfs(root)
-    def dfs(self, node):
+        self.inv(root)
+    def inv(self, node):
         left = node.left
         right = node.right
         node.left = right
         node.right = left
         if (left!=None): 
-            self.dfs(left)
+            self.inv(left)
         if (right!=None): 
-            self.dfs(right)
-    '''
-            
+            self.inv(right)
+    # 非递归暂时不管了
+    
+    
+    '''        
     def invertBinaryTree(self, root):
         # write your code here
         self.inv(root)
@@ -50,4 +51,5 @@ class Solution:
             self.inv(node.right)
         if (node.left!=None): 
             self.inv(node.left)
-    # 非递归暂时不管了
+    '''
+    
