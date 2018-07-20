@@ -21,7 +21,7 @@ class Solution:
         
         dp = [False] * (len(s)+1) 
         dp[0] = True  
-        # n+1个，第一个true是为了应付字符串为空的情况
+        # n+1个，第一个true是为了应付1个字符串的情况
         
         for i in range(1, len(s)+1):
             for j in range(i):
