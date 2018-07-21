@@ -20,7 +20,8 @@ class Solution:
     @return: The maximum amount of money you can rob tonight
     """
     
-    # 自己写的一个很慢的解法
+    # 用数组储存的一个很慢的解法
+    # 虽然用的是动态规划 但用了额外的储存空间
     def houseRobber(self, A):
         if len(A) == 0:
             return 0 
