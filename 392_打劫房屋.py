@@ -34,4 +34,17 @@ class Solution:
                 dp[i] = max(dp[i-1], dp[i-2] + A[i])
         return dp[-1]
         
+    # 一个速度快点的解法
+    # 不用浪费数组的空间去储存之前的答案
+    # 用过的结果可以用count保存信息
+    def houseRobber(self, A):
+        p1, p2, count_1, count_2 = 0, 0, 0, 0
+        for num in A:
+            count_1 = max(p1, p2)
+            count_2 = p1 + num
+            
+            p1, p2 = count_1, count_2
+        return max(p1, p2)
+    
+    
         
